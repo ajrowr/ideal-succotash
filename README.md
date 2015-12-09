@@ -13,6 +13,8 @@ A self-contained piece of Javascript that extracts some metadata from the curren
 
 A Python CGI script that captures POSTed JSON structs and appends them to a file. Provides no connective tissue between the structs so the file itself will not be JSON but its individual lines will.
 
+In theory you could use capt to capture just about any JSON-structured data but for now we're using it for links.
+
 ## booker.py
 
 A handy tool that converts JS code into a bookmarklet. This can be piped in via stdin. Note that booker is not very smart (yet) so be careful. Particularly make sure all comments are a single line starting with // (these will be ignored) and that every single statement is explicitly terminated with a semicolon.
@@ -30,3 +32,5 @@ It also has a facility for user-defined metadata; if you wish to add metadata th
 # Plans
 
 I will be building a frontend (using Angular most likely) for making use of the data I'm capturing, like a web-based bookmarks manager. Most likely the captured data will be pushed into Elasticsearch and made queryable from there.
+
+Note that this is pretty much tailored to my needs; I'm just putting it here a). in case anyone else might find it useful and b). for the sake of having somewhere to put it. Contains 0% secret sauce, YMMV.
