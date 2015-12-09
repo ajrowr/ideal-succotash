@@ -11,7 +11,7 @@ It has a few parts that go in different places and are used in different ways.
 
 ## stasher.js
 
-A self-contained piece of Javascript that extracts some metadata from the current page and POSTs it to capt. Intended to be used as a bookmarklet. 
+A self-contained piece of Javascript that extracts some metadata from the current page and POSTs it to capt. Intended to be used as a bookmarklet, so pipe it through Booker to "compile" it.
 
 ## capt.pycg
 
@@ -37,4 +37,4 @@ It also has a facility for user-defined metadata; if you wish to add metadata th
 
 I will be building a frontend (using Angular most likely) for making use of the data I'm capturing, like a web-based bookmarks manager. Most likely the captured data will be pushed into Elasticsearch and made queryable from there.
 
-Note that this is pretty much tailored to my needs; I'm just putting it here a). in case anyone else might find it useful and b). for the sake of having somewhere to put it. Contains 0% secret sauce, YMMV.
+Note that this is pretty much tailored to my needs; I'm just putting it here a). in case anyone else might find it useful and b). for the sake of having somewhere to put it. Contains some useful examples of CGI techniques in Python and sh, bookmarklet creation and Javascript form posts, and 0% secret sauce. YMMV.
