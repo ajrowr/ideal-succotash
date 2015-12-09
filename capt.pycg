@@ -1,0 +1,33 @@
+#!/usr/bin/env python
+
+## This is a good old-fashioned CGI written in Python. It basically just appends
+## whatever JSON struct is POSTed to it (or a dict made from the query args) to 
+## a target file named for the month/year.
+## Customise its target paths, configure Apache to run it, and you should be good to go.
+## Note that the output file will consist of a bunch of valid JSON structs separated
+## by linefeeds. The file itself will not be valid JSON but its individual lines will.
+
+import os, sys, datetime, json, urllib2
+
+opath = '/var/www/www-codex-cx/content/links'
+fname = datetime.datetime.now().strftime('%Y-%m.lkp2a')
+
+sys.stdout.writelines([
+    "Content-type: text/plain\n",
+    "Access-Control-Allow-Origin: *\n",
+    "Access-Control-Allow-Headers: Content-Type\n",
+    "\n"
+])
+with file(os.path.join(opath, fname), 'a') as fout:
+    if os.environ['REQUEST_METHOD'] == 'POST':
+        postdat = sys.stdin.read()
+        jsondat = json.loads(postdat)
+        fout.write(postdat)
+        fout.write('\n')
+    elif 'QUERY_STRING' in os.environ:
+        q = urllib2.urlparse.parse_qs(os.environ['QUERY_STRING'])
+        if q:
+            json.dump(q, fout)
+            fout.write('\n')
+            print json.dumps(q)
+
