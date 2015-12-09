@@ -1,6 +1,10 @@
 # ideal-succotash
 A microsuite of code that I use to capture URLs from a browser and save them to a server. Helps me manage webpage overload.
 
+# Rationale
+
+The idea is to make it easy to capture data about a webpage in a way that makes that data immediately available and possible to work with later. I use it as a simple way of "bookmarking" webpages portably.
+
 # Components
 
 It has a few parts that go in different places and are used in different ways.
@@ -19,9 +23,9 @@ In theory you could use capt to capture just about any JSON-structured data but 
 
 A handy tool that converts JS code into a bookmarklet. This can be piped in via stdin. Note that booker is not very smart (yet) so be careful. Particularly make sure all comments are a single line starting with // (these will be ignored) and that every single statement is explicitly terminated with a semicolon.
 
-# Rationale
+## download.sh
 
-The idea is to make it easy to capture data about a webpage in a way that makes that data immediately available and possible to work with later.
+This is a simple shell script that downloads whatever URL is given to it as the get arg.
 
 # Info
 
