@@ -33,6 +33,12 @@ In its default configuration, Stasher captures the URL of the page, as well as d
 
 It also has a facility for user-defined metadata; if you wish to add metadata then use the JS console to create an object called _meta in the context of the window. This will be sent verbatim as "meta".
 
+# Known issues
+
+Has problems when a website is HTTPS as browsers tend to disallow POST from secure to unsecure. Will need to get a certificate to solve this properly.
+
+Some websites (eg. Facebook, Twitter, Github) have content-security-policy configurations that prevent stasher from operating. I can see why but it's obviously a pain. We'll see if there's a fix or workaround.
+
 # Plans
 
 I will be building a frontend (using Angular most likely) for making use of the data I'm capturing, like a web-based bookmarks manager. Most likely the captured data will be pushed into Elasticsearch and made queryable from there.
